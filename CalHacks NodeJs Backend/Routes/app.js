@@ -9,6 +9,8 @@ const router=Router();
 
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTHTOKEN;
+const messagingServiceSid= process.env.TWILIO_MESSAGING_SERVICE_SID;
+
 
 const twilioClient = require('twilio')(accountSid,authToken);
 
@@ -26,7 +28,7 @@ router.post('/Send/Sms',(req,res)=>{
     twilioClient.messages.create({
         body: 'Test Message',
         to: req.body.PhoneNo,
-        messagingServiceSid: 'MG3330496f0b8cfcc9723842e2516dd8fd'
+        messagingServiceSid: messagingServiceSid.toString()
     }).then(message=>{
         res.send(message.sid);
     })
