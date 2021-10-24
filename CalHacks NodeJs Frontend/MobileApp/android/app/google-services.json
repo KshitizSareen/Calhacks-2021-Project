@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "972899212629",
+    "project_id": "cal-hacks-2021-project",
+    "storage_bucket": "cal-hacks-2021-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:972899212629:android:d2847ba153cdc449fe23dc",
+        "android_client_info": {
+          "package_name": "com.mobileapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "972899212629-fp1pu1im24eedqchh3n0ejomtcg0hv7v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADZazgn9_OsuxJM3KZA3DTI3L8ibFnU8Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "972899212629-fp1pu1im24eedqchh3n0ejomtcg0hv7v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
