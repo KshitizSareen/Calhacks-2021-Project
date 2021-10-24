@@ -100,6 +100,32 @@ router.post('/AddPhoneReview',(req,res)=>{
     })
 })
 
+router.post('/AddTweetReview',(req,res)=>{
+    firestoredb.collection('Twitter Review').add({
+        UserID: req.body.UserID,
+        TweetID : req.body.TweetID,
+        Tweet: req.body.Tweet,
+        Comment: req.body.Comment,
+        Tags: req.body.Tags
+    }).then(()=>{
+        firestoredb.collection('Tweets with Tags').add({
+            UserID: req.body.UserID,
+        TweetID : req.body.TweetID,
+        Tweet: req.body.Tweet,
+        Tags: req.body.Tags
+        }).then(()=>{
+            res.send("Tweet Review Added");
+        })
+    })
+})
+
+router.post('/GetTags',(req,res)=>{
+    firestoredb.collection('Tweets with Tags').where("UserID","==",req.body.UserID).get().then((result)=>{
+        const Tags= result.docs.map(doc=>doc.data());
+        res.json(Tags);
+    })
+})
+
 module.exports={
     router
 }
