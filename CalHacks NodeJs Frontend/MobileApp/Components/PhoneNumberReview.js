@@ -28,6 +28,18 @@ class PhoneNumberReview extends Component
             tags: "",
         }
     }
+
+    componentDidMount()
+    {
+        if(this.props.route.params!=null)
+        {
+            this.setState({Name: this.props.route.params.Name});
+        }
+        if(this.props.route.params!=null)
+        {
+            this.setState({PhoneNo: this.props.route.params.PhoneNo})
+        }
+    }
     render()
     {
         return(

@@ -22,6 +22,26 @@ class PhoneNumberReviews extends Component
     }
     render()
     {
+        const ShowWriteReview=()=>{
+            return(
+                <TouchableOpacity style={{
+                    backgroundColor: '#0593ff',
+                    width: 0.5*width,
+                    height: 0.05*height,
+                    marginTop: '10%',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    borderRadius: 50,
+                    marginLeft: '2.5%'
+                }} onPress={()=>{
+                    this.props.navigation.navigate("Phone Number Review");
+                }}>
+                    <Text style={{
+                        fontSize: 20
+                    }}>Write a Review</Text>
+                </TouchableOpacity>
+            )
+        }
         const ShowAverage = ()=>{
             return(
                 <View style={{
@@ -114,7 +134,7 @@ class PhoneNumberReviews extends Component
                 {
                     this.state.NumberOwner.Name!=undefined ?
                     ShowAverage() :
-                    null
+                    ShowWriteReview()
                 }
                 <View style={{
                     marginTop: '10%',
@@ -192,6 +212,24 @@ class PhoneNumberReviews extends Component
                         color: 'black',
                         fontSize: 22
                     }}>{data.item.Description}</Text>
+                    <View style={{
+                        width: 0.8*width,
+                        height: 3,
+                        backgroundColor: 'black',
+                        alignSelf: 'center'
+                    }}/>
+                    <View style={{
+                        width: 0.5*width,
+                        flexDirection: 'row'
+                    }}>
+                    {
+                        data.item.Tags.map(tag=>{
+                            return(
+                                <Text style={{color: 'black',fontSize:16}}>#{tag} </Text>
+                            )
+                        })
+                    }
+                    </View>
                             </TouchableOpacity>
                     )
                 }} key={data=>data.index}/>

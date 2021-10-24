@@ -76,6 +76,7 @@ class DisplayPhoneReview extends Component
                     borderRadius: 50,
                     marginLeft: '2.5%'
                 }} onPress={()=>{
+                    this.props.navigation.navigate("Phone Number Review",{Name: this.props.route.params.Review.Name,PhoneNo: this.props.route.params.Review.PhoneNo});
                 }}>
                     <Text style={{
                         fontSize: 20
@@ -113,6 +114,19 @@ class DisplayPhoneReview extends Component
                         fontSize: 22,
                         marginLeft: '2.5%'
                     }}>{this.props.route.params.Review.Description}</Text>
+                    <View style={{
+                        width: 0.9*width,
+                        flexDirection: 'row',
+                        marginLeft: '2.5%'
+                    }}>
+                    {
+                        this.props.route.params.Review.Tags.map(tag=>{
+                            return(
+                                <Text style={{color: 'black',fontSize:22}}>#{tag} </Text>
+                            )
+                        })
+                    }
+                    </View>
             </View>
         )
     }

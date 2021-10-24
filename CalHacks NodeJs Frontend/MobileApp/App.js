@@ -11,6 +11,8 @@ import OTPPage from './Components/OTPPage';
 import HomePage from './Components/HomePage';
 import PhoneNumberReview from './Components/PhoneNumberReview';
 import DisplayPhoneReview from './Components/DIsplayPhoneReview';
+import TwitterReviews from './Components/TwitterReviews';
+import ReportTweet from './Components/ReportTweet';
 
 const Stack = createStackNavigator();
 class App extends Component
@@ -32,6 +34,7 @@ class App extends Component
         <Stack.Screen name="HomePage" component={HomePage}/>
         <Stack.Screen name="Phone Number Review" component={PhoneNumberReview}/>
         <Stack.Screen name="Display Phone Review" component={DisplayPhoneReview}/>
+        <Stack.Screen name="Report Tweet" component={ReportTweet}/>
       </Stack.Navigator>
       </NavigationContainer>
     );
